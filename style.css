@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+#MainCard {
+    width: 650px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    overflow: hidden;
+}
+
+#TotalQuestion {
+    display: block;
+    text-align: right;
+    padding: 15px 25px;
+    background: #4f46e5;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#container {
+    padding: 25px;
+}
+
+#container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 12px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+li:hover {
+    background: #f2f4ff;
+    border-color: #4f46e5;
+}
+
+li input {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+label {
+    cursor: pointer;
+    font-size: 18px;
+    color: #444;
+}
+
+#btn1 {
+    margin-top: 25px;
+    text-align: right;
+}
+
+#btn1 button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 17px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#btn1 button:hover {
+    background: #3730a3;
+}
+
+#result{
+    width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    padding: 30px;
+    text-align: center;
+    border-top: 8px solid #4f46e5;
+}
+
+#result h1{
+    color: #4f46e5;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+#result h2{
+    margin: 15px 0;
+    font-size: 22px;
+    color: #333;
+}
+
+#result .score{
+    font-size: 55px;
+    color: #16a34a;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#result .box{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+#result button{
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+#result button:hover{
+    background: #3730a3;
+}

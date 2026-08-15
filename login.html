@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="email" placeholder="Enter Email Address" id="email">
+    <input type="text" placeholder="Enter Password " id="password">
+    <button id="login">login</button>
+    <a href="./signup.html">don't have an account ? </a>
+
+
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBw8pAT_2oOCQ5jSERPpbaqgV0NcSwEG4c",
+            authDomain: "quiz-app-a7554.firebaseapp.com",
+            projectId: "quiz-app-a7554",
+            storageBucket: "quiz-app-a7554.firebasestorage.app",
+            messagingSenderId: "1035498201773",
+            appId: "1:1035498201773:web:50032abad26f52a8ff5c24"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="login.js"></script>
+
+</body>
+
+</html>
