@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student ID Card</title>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page {
+            text-align: center;
+        }
+
+        .page-title {
+            margin-bottom: 20px;
+            color: #172033;
+        }
+
+        /* CARD */
+
+        .card {
+            width: 600px;
+            min-height: 340px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* HEADER */
+
+        .card-header {
+            height: 90px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 58px;
+            height: 58px;
+            background: white;
+            color: #2563eb;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-text h2 {
+            font-size: 22px;
+        }
+
+        .header-text p {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* CONTENT */
+
+        .card-content {
+            display: flex;
+            padding: 25px;
+            gap: 25px;
+        }
+
+        /* LEFT */
+
+        .student-section {
+            flex: 1;
+            display: flex;
+            gap: 18px;
+            text-align: left;
+        }
+
+        .student-image {
+            width: 105px;
+            height: 125px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #e2e8f0;
+        }
+
+        .student-details {
+            flex: 1;
+        }
+
+        .student-details h2 {
+            color: #111827;
+            font-size: 21px;
+            margin-bottom: 5px;
+        }
+
+        .role {
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .detail {
+            margin-bottom: 8px;
+        }
+
+        .detail label {
+            display: block;
+            font-size: 10px;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+
+        .detail span {
+            font-size: 12px;
+            color: #172033;
+            font-weight: 600;
+        }
+
+        /* RIGHT */
+
+        .qr-section {
+            width: 145px;
+            border-left: 1px solid #e2e8f0;
+            padding-left: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #qrcode {
+            width: 105px;
+            height: 105px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #qrcode img {
+            width: 105px !important;
+            height: 105px !important;
+        }
+
+        .qr-section p {
+            margin-top: 10px;
+            font-size: 10px;
+            color: #64748b;
+            text-align: center;
+        }
+
+        .verified {
+            margin-top: 8px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: #dcfce7;
+            color: #15803d;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        .card-footer {
+            background: #111827;
+            color: white;
+            padding: 12px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 10px;
+        }
+
+        .card-footer span {
+            color: #60a5fa;
+        }
+
+        .card-number {
+            letter-spacing: 1px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:650px) {
+
+            .card {
+                width: 95vw;
+            }
+
+            .card-content {
+                gap: 10px;
+                padding: 20px;
+            }
+
+            .student-section {
+                gap: 10px;
+            }
+
+            .student-image {
+                width: 85px;
+                height: 105px;
+            }
+
+            .qr-section {
+                width: 120px;
+                padding-left: 10px;
+            }
+
+            #qrcode,
+            #qrcode img {
+                width: 85px !important;
+                height: 85px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h2 class="page-title">
+            Student ID Card Preview
+        </h2>
+
+        <div class="card">
+
+            <!-- HEADER -->
+
+            <div class="card-header">
+
+                <div class="logo">
+                    SMIT
+                </div>
+
+                <div class="header-text">
+                    <h2>SMIT Hyderabad</h2>
+                    <p>STUDENT IDENTITY CARD</p>
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="card-content">
+
+                <!-- LEFT SIDE -->
+
+                <div class="student-section">
+
+                    <img
+                        id="stdImage"
+                        class="student-image"
+                        src="https://res.cloudinary.com/oxd4g5j7/image/upload/v1786879008/kpxz6dzggtj8pfywkwhz.png"
+                        alt="Student"
+                    >
+
+                    <div class="student-details">
+
+                        <h2 id="studentName">
+                          
+                        </h2>
+
+                        <div class="role">
+                            MERN STACK STUDENT
+                        </div>
+
+                       
+
+                        <div class="detail">
+                            <label>Email</label>
+                            <span id="studentEmail">
+                                student@gmail.com
+                            </span>
+                        </div>
+
+                        <div class="detail">
+                            <label>Course</label>
+                            <span id="studentCourse">
+                                MERN Stack
+                            </span>
+                        </div>
+
+                     
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="qr-section">
+
+                    <div id="qrcode"></div>
+
+                    <p>
+                        Scan to verify<br>
+                        student identity
+                    </p>
+
+                    <div class="verified">
+                        ✓ VERIFIED
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="card-footer">
+
+                <div>
+                    Property of <span>SMIT Hyderabad</span>
+                </div>
+
+                <div class="card-number" id="footerStudentId">
+                    SMIT-10245
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+  
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.16.0/firebase-database-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBw8pAT_2oOCQ5jSERPpbaqgV0NcSwEG4c",
+            authDomain: "quiz-app-a7554.firebaseapp.com",
+            databaseURL: "https://quiz-app-a7554-default-rtdb.firebaseio.com",
+            projectId: "quiz-app-a7554",
+            storageBucket: "quiz-app-a7554.firebasestorage.app",
+            messagingSenderId: "1035498201773",
+            appId: "1:1035498201773:web:50032abad26f52a8ff5c24"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
